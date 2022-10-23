@@ -4,20 +4,20 @@ metadata:
   name: dbdeploy
   namespace: nsdb
   labels:
-    app: database
+    app: mysql
 spec:
   selector:
     matchLabels:
-      app: database
+      app: mysql
   replicas: 3
   template:
     metadata:
       labels:
-        app: database
+        app: mysql
     spec:
       containers:
       - name: datab
-        image: $ECR_REGISTRY/ass02-dev-web:v1.0
+        image: '105718917616.dkr.ecr.us-east-1.amazonaws.com/ass02-dev-datab:v1.0'
         env:
         - name: MYSQL_ROOT_PASSWORD
           value : passw
