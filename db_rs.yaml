@@ -5,7 +5,7 @@ metadata:
   labels :
     app: mysql
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: mysql
@@ -16,10 +16,10 @@ spec:
     spec:
       containers:
       - name: datab
-        image: '105718917616.dkr.ecr.us-east-1.amazonaws.com/ass02-dev-datab:v1.0'
-        ports: 
+        image: '105718917616.dkr.ecr.us-east-1.amazonaws.com/ass02-dev-web:v1.0'
+        ports:
         - containerPort: 8080
           protocol: TCP
-          env:
-          - name: MYSQL_ROOT_PASSWORD
-            value : passw
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value : passw
