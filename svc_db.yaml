@@ -3,7 +3,6 @@ kind: Service
 metadata:
   namespace: nsdb
   name: csip
-  
   labels:
     app: sql
 spec:
