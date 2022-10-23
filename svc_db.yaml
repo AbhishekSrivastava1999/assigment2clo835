@@ -4,10 +4,10 @@ metadata:
   namespace: nsdb
   name: csip
   labels:
-    app: sql
+    app: database
 spec:
   ports:
   - port: 3306
     targetPort: 3306
   selector:
-    app: sql
+    app: database
