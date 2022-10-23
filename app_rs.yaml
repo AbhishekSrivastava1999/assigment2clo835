@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: apprs
+  labels :
+    app: web
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+      - name: web
+        image: $ECR_REGISTRY/ass02-dev-web:v1.0
+        ports: 
+        - containerPort: 8080
+          protocol: TCP
+          env:
+          - name: MYSQL_ROOT_PASSWORD
+            value : passw
+          - name: DBHOST
+            value :
+          - name: DBPORT
+            value : "3306"
