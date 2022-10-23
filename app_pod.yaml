@@ -8,8 +8,8 @@ metadata:
 spec:
   containers:
   - name: web
-    image: -f Dockerfile -t 105718917616.dkr.ecr.us-east-1.amazonaws.com/ass02-dev-web:v1.0
-    ports: 
+    image: '105718917616.dkr.ecr.us-east-1.amazonaws.com/ass02-dev-web:v1.0'
+    ports:
     - containerPort: 8080
       protocol: TCP
     env:
@@ -21,4 +21,3 @@ spec:
       value : passw
     - name: DBPORT
       value : "3306"
-      
