@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: mysqlrs
+  labels :
+    app: database
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: database
+  template:
+    metadata:
+      labels:
+        app: database
+    spec:
+      containers:
+      - name: datab
+        image: $ECR_REGISTRY/assignment01-dev-datab:v1.0
+        ports: 
+        - containerPort: 8080
+          protocol: TCP
+          env:
+          - name: MYSQL_ROOT_PASSWORD
+            value : passw
