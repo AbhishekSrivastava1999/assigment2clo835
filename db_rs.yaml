@@ -3,20 +3,20 @@ kind: ReplicaSet
 metadata:
   name: mysqlrs
   labels :
-    app: database
+    app: mysql
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: database
+      app: mysql
   template:
     metadata:
       labels:
-        app: database
+        app: mysql
     spec:
       containers:
       - name: datab
-        image: $ECR_REGISTRY/assignment01-dev-datab:v1.0
+        image: '105718917616.dkr.ecr.us-east-1.amazonaws.com/ass02-dev-datab:v1.0'
         ports: 
         - containerPort: 8080
           protocol: TCP
