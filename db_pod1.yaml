@@ -1,12 +1,16 @@
-kind: Pod
 apiVersion: v1
+kind: Pod
 metadata:
+  namespace: nsdb
   name: sql
   labels: 'app:database'
 spec:
   containers:
-    - name: mysql
+    - name: sql
       image: '105718917616.dkr.ecr.us-east-1.amazonaws.com/ass02-dev-datab:v1.0'
       ports:
         - containerPort: 3306
           protocol: TCP
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: passw
