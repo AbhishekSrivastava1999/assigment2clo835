@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dbdeploy
+  namespace: nsdb
+  labels:
+    app: database
+spec:
+  selector:
+    matchLabels:
+      app: database
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: database
+    spec:
+      containers:
+      - name: datab
+        image: $ECR_REGISTRY/ass02-dev-web:v1.0
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value : passw
+        - name: DBHOST
+          value :
+        - name: DBPORT
+          value : "3306"
+        ports: 
+          - containerPort: 8080
+            protocol: TCP
