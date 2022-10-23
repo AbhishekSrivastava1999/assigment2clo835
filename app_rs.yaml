@@ -24,6 +24,6 @@ spec:
           - name: MYSQL_ROOT_PASSWORD
             value : passw
           - name: DBHOST
-            value : 10.244.0.5
+            value : 10.244.0.7
           - name: DBPORT
             value : "3306"
