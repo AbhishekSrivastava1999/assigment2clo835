@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  namespace: nsweb
+  name: app
+  labels: 'app:web'
+spec:
+  containers:
+  - name: web
+    image: -f Dockerfile -t $ECR_REGISTRY/assignment01-dev-web:v1.0
+    ports: 
+    - containerPort: 8080
+      protocol: TCP
+    env:
+    - name: DBHOST
+      value : 
+    - name: DBUSER
+      value : root
+    - name: DBPWD
+      value : passw
+    - name: DBPORT
+      value : "3306"
+      
