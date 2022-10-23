@@ -3,20 +3,20 @@ kind: ReplicaSet
 metadata:
   name: apprs
   labels :
-    app: web
+    app: employees
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: web
+      app: employees
   template:
     metadata:
       labels:
-        app: web
+        app: employees
     spec:
       containers:
       - name: web
-        image: $ECR_REGISTRY/ass02-dev-web:v1.0
+        image: '105718917616.dkr.ecr.us-east-1.amazonaws.com/ass02-dev-web:v1.0'
         ports: 
         - containerPort: 8080
           protocol: TCP
@@ -24,6 +24,6 @@ spec:
           - name: MYSQL_ROOT_PASSWORD
             value : passw
           - name: DBHOST
-            value :
+            value : 10.244.0.5
           - name: DBPORT
             value : "3306"
