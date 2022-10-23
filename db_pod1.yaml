@@ -6,7 +6,7 @@ metadata:
   labels: 'app:database'
 spec:
   containers:
-    - name: sql
+    - name: datab
       image: '105718917616.dkr.ecr.us-east-1.amazonaws.com/ass02-dev-datab:v1.0'
       ports:
         - containerPort: 3306
