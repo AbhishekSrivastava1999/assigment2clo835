@@ -4,7 +4,7 @@ metadata:
   namespace: nsweb
   name: app
   labels:
-    app: webapp
+    app: employees
 spec:
   containers:
   - name: web
