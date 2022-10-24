@@ -17,14 +17,16 @@ spec:
     spec:
       containers:
       - name: web
-        image: '105718917616.dkr.ecr.us-east-1.amazonaws.com/ass02-dev-web:v1.0'
+        image: '105718917616.dkr.ecr.us-east-1.amazonaws.com/ass02-dev-web:v2.0'
+        ports: 
+        - containerPort: 8080
+          protocol: TCP
         env:
-        - name: MYSQL_ROOT_PASSWORD
+        - name: DBPWD
           value : passw
         - name: DBHOST
-          value : 10.244.0.7
+          value : 10.244.0.36
+        - name: DBUSER
+          value : root
         - name: DBPORT
           value : "3306"
-        ports: 
-          - containerPort: 8080
-            protocol: TCP
