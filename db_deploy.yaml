@@ -21,8 +21,6 @@ spec:
         env:
         - name: MYSQL_ROOT_PASSWORD
           value : passw
-        - name: DBHOST
-          value : 10.244.0.5
         - name: DBPORT
           value : "3306"
         ports: 
